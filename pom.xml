@@ -23,7 +23,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>              
                 <configuration>                         
-    				  <mainClass>io.camunda.getstarted.tutorial.Worker</mainClass>
+    				  <mainClass>io.jit.cloud.Worker</mainClass>
                 </configuration>
             </plugin>			
 			<plugin>
