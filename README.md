@@ -22,3 +22,4 @@ Now you need to model and deploy a BPMN process that contains a service task of 
 
 - You can create a comparable worker in another programming language following one of the [Get Started Guides](https://github.com/camunda-cloud/camunda-cloud-get-started)
 - This template uses the library [spring-zeebe](https://github.com/camunda-community-hub/spring-zeebe), please refer to that documentation for up to date information
+- You can check the latest versions of the libraries here: https://mvnrepository.com/artifact/io.camunda.spring/spring-boot-starter-camunda and here: https://mvnrepository.com/artifact/io.camunda.spring/spring-boot-starter-camunda
