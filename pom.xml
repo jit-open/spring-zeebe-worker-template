@@ -5,35 +5,58 @@
 
 	<groupId>io.jit.cloud</groupId>
 	<artifactId>zeebe-worker</artifactId>
-
-	<packaging>jar</packaging>
 	<version>1.0.0-SNAPSHOT</version>
-	
+
+	<properties>
+		<java.version>17</java.version>
+		<springBoot.version>3.1.12</springBoot.version>
+		<spring-boot-zeebe.version>8.4.8</spring-boot-zeebe.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 	<dependencies>
 		<dependency>
-			<groupId>io.camunda</groupId>
-			<artifactId>spring-zeebe-starter</artifactId>
-			<version>8.1.17</version>
+			<groupId>io.camunda.spring</groupId>
+			<artifactId>spring-boot-starter-camunda</artifactId>
+			<version>${spring-boot-zeebe.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<version>${springBoot.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${springBoot.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
-		<plugins>	
+		<plugins>
 			<plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>              
-                <configuration>                         
-    				  <mainClass>io.jit.cloud.Worker</mainClass>
-                </configuration>
-            </plugin>			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${springBoot.version}</version>
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>identity</id>
+			<name>Camunda Identity</name>
+			<url>https://artifacts.camunda.com/artifactory/camunda-identity/</url>
+		</repository>
+	</repositories>
+
 </project>

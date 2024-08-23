@@ -1,16 +1,14 @@
 package io.jit.cloud;
 
 import io.camunda.zeebe.client.api.response.ActivatedJob;
-import io.camunda.zeebe.spring.client.EnableZeebeClient;
 import io.camunda.zeebe.spring.client.annotation.JobWorker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import java.util.HashMap;
 import java.util.Map;
 
+
 @SpringBootApplication
-@EnableZeebeClient
 public class Worker {
 
   public static void main(String[] args) {
